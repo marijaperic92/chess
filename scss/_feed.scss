@@ -9,7 +9,7 @@
   overflow-y: scroll;
   @include user-select(none);
 
-  article{
+  article {
     padding: 20px;
   }
 
@@ -37,5 +37,23 @@
       color: t($link);
     }
     font-size: 12px;
+  }
+}
+
+@media screen and ($small-size-down) {
+  .feed {
+    height: 250px;
+  }
+}
+
+@media screen and ($medium-size-up) and ($medium-size-down) {
+  .feed {
+    height: 350px;
+  }
+}
+
+@media screen and ($large-size-up) {
+  .feed {
+    height: 400px;
   }
 }

@@ -5,13 +5,20 @@
   font-family: $font-stack;
 }
 
-body {
+html, body {
   background: $fuscous-gray;
+  height: 100%;
+  position: relative;
 }
 
-header,
-footer {
+.wrapper {
+  height: 100%;
+  position: relative;
+}
+
+header {
   padding: 20px;
+  width: 100%;
 }
 
 header {
@@ -24,13 +31,18 @@ h1 {
   font-weight: 600;
 }
 
-p.text-center{
+p.text-center {
   text-align: center;
 }
 
-.icon {
+.avatar {
   width: 30px;
   height: 30px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
 
 figcaption {
@@ -50,12 +62,14 @@ aside {
     color: t($text);
     background: t($bg);
   }
+  max-height: 700px;
 }
 
 main {
   background: $fuscous-gray;
   margin: 0 auto;
   max-width: 1200px;
+  min-height:100%;
 
   .content {
     color: $aths-special;
@@ -86,7 +100,7 @@ main {
     grid-template-areas: "content sidebar";
     grid-gap: 10px;
     padding: 10px;
-  
+
     img.gif {
       width: 300px;
       height: 300px;
@@ -98,9 +112,9 @@ main {
     grid-template-areas: "content sidebar";
     grid-gap: 10px;
     padding: 10px;
-    
+
     .sidebar {
-      width:600px;
+      width: 600px;
     }
 
     img.gif {

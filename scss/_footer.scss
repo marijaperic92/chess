@@ -2,6 +2,8 @@ footer {
   background-color: $dune;
   line-height: 3;
   text-align: center;
+  padding: 20px;
+  width: 100%;
 
   ul {
     display: inline-grid;
@@ -11,13 +13,13 @@ footer {
     margin: auto;
     color: $fire-bush;
 
-    li{
+    li {
       &:last-child {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
     }
-    
+
     li:hover ~ li img {
       animation: wave-animation 0.3s infinite;
     }
@@ -34,6 +36,21 @@ footer {
     }
   }
 }
+
+@media screen and ($medium-size-up) and ($medium-size-down) {
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media screen and ($large-size-up) {
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
 
 @keyframes wave-animation {
   0%,
