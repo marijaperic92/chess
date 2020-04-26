@@ -1,0 +1,41 @@
+.feed {
+  @include themed() {
+    color: t($text);
+    background: t($feed);
+  }
+  width: 100%;
+  margin-top: 30px;
+  height: 250px;
+  overflow-y: scroll;
+  @include user-select(none);
+
+  article{
+    padding: 20px;
+  }
+
+  h2 {
+    @include themed() {
+      color: t($text-feed-title);
+    }
+    font-size: 15px;
+  }
+
+  p {
+    @include themed() {
+      color: t($text-feed-regular);
+    }
+    font-size: 11px;
+  }
+  h3 {
+    @include themed() {
+      color: t($date);
+    }
+    font-size: 12px;
+  }
+  a {
+    @include themed() {
+      color: t($link);
+    }
+    font-size: 12px;
+  }
+}

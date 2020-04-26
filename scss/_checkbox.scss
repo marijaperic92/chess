@@ -1,0 +1,41 @@
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  &:checked + label {
+    background: $fire-bush;
+    &:after {
+      left: calc(100% - 5px);
+      @include translateX(-100%);
+    }
+  }
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 55px;
+  height: 30px;
+  background: $apple;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  position: relative;
+  &:after {
+    content: "";
+    background: $aths-special;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    @include transition(cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms);
+  }
+}

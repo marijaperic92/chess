@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/thirdParty/rss-parser.min.js"></script>
+    <script src='./js/players.js' defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Play chess</h1>
+    </header>
+
+    <main class="container theme--dark">
+        <section class="content">
+            <figure id="player-one">
+                <img class="icon" src="./images/chess-orange-icon.png" alt="Player one">
+                <figcaption>Player one</figcaption>
+            </figure>
+            <img class="gif" src="./images/chess.gif" alt="Chess gif">
+            <figure id="player-two">
+                <img class="icon" src="./images/chess-orange-icon.png" alt="Player two">
+                <figcaption>Player two</figcaption>
+            </figure>
+        </section>
+        <aside class="sidebar">
+            <div>
+                <p class="text-center">Light mode</p>
+                <input class="container_toggle" type="checkbox" id="switch" name="mode">
+                <label for="switch">Toggle</label>
+            </div>
+            <div class="button-group">
+                <div>
+                    <button class="btn" type="button">Rematch</button>
+                </div>
+                <div>
+                    <button class="btn" type="button">Archive</button>
+                </div>
+                <div>
+                    <button class="btn" type="button">New game</button>
+                </div>
+            </div>
+
+
+            <div class="feed">
+                <article>
+                    <output>Loading...</output>
+                    <template>
+                        <h2></h2>
+                        <p></p>
+                        <h3></h3>
+                        <a href='#'></a>
+                    </template>
+                </article>
+            </div>
+
+        </aside>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="https://twitter.com/chesscom">Twitter</a></li>
+            <li><a href="https://www.facebook.com/chess">Facebook</a></li>
+            <li><a href="https://www.youtube.com/user/wwwChesscom">Youtube</a></li>
+            <li><a href="https://www.twitch.tv/chess">Twitch</a></li>
+            <li><a href="https://www.instagram.com/wwwchesscom/">Instagram</a></li>
+            <li>
+                <img class="icon" src="./images/chess-green-icon.png" alt="Player one">
+            </li>
+        </ul>
+    </footer>
+
+</body>
+<script src='./js/mode.js'></script>
+<script src='./js/rss.js'></script>
+
+</html>

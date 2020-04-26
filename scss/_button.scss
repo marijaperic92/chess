@@ -1,0 +1,26 @@
+button {
+  @include button-reset;
+  &.btn {
+    width: $medium-button;
+    padding: $padding-button;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+    border-bottom: 1px solid #a7a6a2;
+    @include border-radius(4px);
+    @include themed() {
+      background: t($button-color)
+    }
+    @include themed() {
+      background: t($button)
+    }
+    outline: none;
+
+    &:hover,:focus {
+      @include themed() {
+        background: t($hover)
+      }
+    }
+  }
+}

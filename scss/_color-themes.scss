@@ -1,0 +1,68 @@
+//shortcuts
+$bg: "bg";
+$feed: "feed";
+$text: "text";
+$date: "date";
+$text-feed-title: "text-feed-title";
+$text-feed-regular: "text-feed-regular";
+$link: "link";
+$hover: "hover";
+$icon: "icon";
+$button: "button";
+$button-color: "button-color";
+$border: "border";
+
+//themes
+$themes: (
+  light: (
+    icon: url("../images/pawn-black.svg"),
+    bg: $white,
+    feed: $white-special,
+    text: $dune,
+    date: $cactus,
+    text-feed-title: $asparagus,
+    text-feed-regular: $dune,
+    link: $fire-bush,
+    hover: $light-gray,
+    button: $white-gray,
+    button-color: $dune,
+    border: $cactus,
+  ),
+  dark: (
+    icon: url("../images/pawn-white.svg"),
+    bg: $dune,
+    feed: $dark-gray,
+    text: $aths-special,
+    date:$white-gray,
+    text-feed-title: $asparagus,
+    text-feed-regular: $white,
+    link: $fire-bush,
+    hover:  $cactus,
+    button: $fuscous-gray,
+    button-color: $white,
+    border: $cactus,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
